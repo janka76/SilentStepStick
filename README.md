@@ -64,7 +64,7 @@ The driver boards are hardware compatible with [StepStick](http://reprap.org/wik
 
 * Review from Moritz Walter:
 
-  [<img src="https://hackadaycom.files.wordpress.com/2016/09/tmc_thumb1.jpg" width="400" height="225">](http://hackaday.com/2016/09/30/3d-printering-trinamic-tmc2130-stepper-motor-drivers-shifting-the-gears/)
+  [<img src="https://hackadaycom.files.wordpress.com/2016/09/tmc_thumb1.jpg" width="400" height="400">](http://hackaday.com/2016/09/30/3d-printering-trinamic-tmc2130-stepper-motor-drivers-shifting-the-gears/)
 
 * What is Trinamic stallGuard2 and coolStep:
 
