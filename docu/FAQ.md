@@ -7,8 +7,15 @@ The TMC2100 config pins also know three states: low (GND), high (VIO) and open (
 On the TMC2130 SPI is used for the configuration and so the controller board must have SPI on the CFG pins.
 
 
+## What is the difference between SilentStepSticks with 3.3V-5V and 5V logic voltage?
+The SilentStepSticks with a logic voltage (VIO) of 3.3V-5V use the internal linear regulator of the TMC21x0 to generate from the motor voltage (VM) a 5V voltage for the internal digital and analog circuit.
+Because it is a linear voltage regulator the power dissipation depends on the motor voltage (high motor voltage = high power dissipation/heat).
+The 5V logic SilentStepSticks do not use the internal voltage regulator of TMC2100 and therefor only a 5V supply voltage for VIO is possible and VM has not to be present before VIO.
+
+
 ## Where can I find more information on the settings and operation modes?
 More information can be found in the [SilentStepStick schematics](https://github.com/watterott/SilentStepStick/tree/master/hardware) and [TMC2100 datasheet](http://www.trinamic.com/products/integrated-circuits/stepper-power-driver/tmc2100) / [TMC2130 datasheet](http://www.trinamic.com/products/integrated-circuits/stepper-power-driver/tmc2130).
+
 For most cases the **1/16 stealthChop** mode (CFG1=open, CFG2=open, CFG3=open) is suitable.
 If you have problems like step losses then use the more powerful **1/16 spreadCycle** mode (CFG1=GND, CFG2=open, CFG3=open).
 
@@ -23,7 +30,8 @@ If you have problems like step losses then use the more powerful **1/16 spreadCy
 * [Ultimaker UMO + TMC2100 (English)](https://ultimaker.com/en/community/11571-step-by-step-installation-of-silentstepstick-drivers-on-umo)
 * [Ultimaker UMO + TMC2130 (English)](https://ultimaker.com/en/community/20090-step-by-step-installation-of-sss-tmc2130-on-umo)
 
-#### Boards with USB Power Supply and SilentStepSticks with 3.3...5V logic voltage
+#### Boards with USB Power Supply
+Only applicable for SilentStepSticks with 3.3V-5V logic voltage (```VIO```):
 If you use a control board with USB power supply (like Arduino + RAMPS) then always ensure that ```VM``` is present, when you connect the board via USB.
 Otherwise the TMC21x0 is not powered via the internal voltage regulator and a high current can flow into ```VIO``` and this can damage the internal logic.
 As safety workaround you can disconnect the 5V signal in the USB cable, so that the board cannot be powered over USB.
@@ -50,7 +58,7 @@ The maximum motor current is 1.77A RMS and is set via the 0.11Ohm sense resistor
 
 ## What to consider when turning the power supply on or off?
 **Power on:**
-The motor supply voltage ```VM``` should come up first and then ```VIO```, because the internal logic of the TMC21x0 driver is powered from ```VM``` (SilentStepSticks with 3.3...5V logic voltage).
+The motor supply voltage ```VM``` should come up first and then ```VIO```, because the internal logic of the TMC21x0 driver is powered from ```VM``` (SilentStepSticks with 3.3V-5V logic voltage).
 Only after ```VIO``` is present and stable, the driver inputs (STEP, DIR, EN, CFG1...) can be driven with a high level.
 
 Because ```VM``` is a strong power supply with a high voltage, also ensure that there cannot occur voltage spikes on power up. See [Pololu: Understanding Destructive LC Voltage Spikes](https://www.pololu.com/docs/0J16/all).

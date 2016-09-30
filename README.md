@@ -10,12 +10,12 @@ The driver boards are hardware compatible with [StepStick](http://reprap.org/wik
 
 ## Shop
 * Trinamic **TMC2100** based drivers (CFG pins for configuration)
-  * [TMC2100 SilentStepStick (3.3-5V logic voltage)](http://www.watterott.com/en/SilentStepStick)
-  * [TMC2100 SilentStepStick (3.3-5V logic voltage) with soldered Pin Headers](http://www.watterott.com/en/SilentStepStick-with-Pins)
+  * [TMC2100 SilentStepStick (3.3V-5V logic voltage)](http://www.watterott.com/en/SilentStepStick)
+  * [TMC2100 SilentStepStick (3.3V-5V logic voltage) with soldered Pin Headers](http://www.watterott.com/en/SilentStepStick-with-Pins)
   * [TMC2100 SilentStepStick (5V logic voltage)](http://www.watterott.com/en/SilentStepStick-TMC2100-5V)
   * [TMC2100 SilentStepStick (5V logic voltage) with soldered Pin Headers](http://www.watterott.com/en/SilentStepStick-TMC2100-5V-with-Pins)
 * Trinamic **TMC2130** based drivers (SPI for configuration)
-  * [TMC2130 SilentStepStick (3.3-5V logic voltage)](http://www.watterott.com/en/SilentStepStick-TMC2130)
+  * [TMC2130 SilentStepStick (3.3V-5V logic voltage)](http://www.watterott.com/en/SilentStepStick-TMC2130)
 * Accessories
   * [SilentStepStick Protector (with flyback diodes)](http://www.watterott.com/en/SilentStepStick-Protector)
   * [Suitable Heatsink 10x10mm](http://www.watterott.com/en/Pin-heatsink-square-ICK-S-10-x-10-x-125)
@@ -27,8 +27,8 @@ The driver boards are hardware compatible with [StepStick](http://reprap.org/wik
 * Hardware compatible with [StepStick](http://reprap.org/wiki/StepStick) and [Pololu A4988](https://www.pololu.com/product/1182)
 * Trinamic TMC21x0 stepper motor driver
 * Step/Dir interface with up to 16 microsteps and 256 microsteps interpolation
-* Motor current: up to **1.2A RMS** continuously and 2.5A short time peak current per coil
-* Motor voltage: **5.5...45V** (3.3...5V logic) or **4.75...45V** (5V logic)
+* Motor current: up to **1.2A RMS** continuously and 2.5A short time peak current per coil (active cooling required)
+* Motor voltage: **5.5V...45V** (3.3...5V logic) or **4.75V...45V** (5V logic)
 * **microPlyer** - microstep interpolator for increased smoothness of microstepping
 * **stealthChop** - for quiet operation and smooth motion
 * **spreadCycle** - highly dynamic motor control chopper
