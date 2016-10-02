@@ -25,6 +25,7 @@ The driver boards are hardware compatible with [StepStick](http://reprap.org/wik
 
 ## Features
 * Hardware compatible with [StepStick](http://reprap.org/wiki/StepStick) and [Pololu A4988](https://www.pololu.com/product/1182)
+* Components on bottom PCB side for better heat emission, further infos [here](https://github.com/watterott/SilentStepStick/blob/master/docu/FAQ.md#why-is-the-tmc2100-chip-on-the-bottom-pcb-side)
 * Trinamic TMC21x0 stepper motor driver
 * Step/Dir interface with up to 16 microsteps and 256 microsteps interpolation
 * Motor current: up to **1.2A RMS** continuously and 2.5A short time peak current per coil (active cooling required)
