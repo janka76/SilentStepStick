@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.5.0">
+<eagle version="7.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="11" fill="1" visible="no" active="no"/>
@@ -15127,7 +15127,7 @@ all kinds in 0402 and 0603</description>
 </package>
 </packages>
 <symbols>
-<symbol name="TMC2100">
+<symbol name="TMC21X0">
 <pin name="TST_MODE" x="20.32" y="-35.56" length="middle" rot="R180"/>
 <pin name="CLK" x="-20.32" y="-20.32" length="middle"/>
 <pin name="CSN_CFG3" x="-20.32" y="-7.62" length="middle"/>
@@ -15170,10 +15170,10 @@ all kinds in 0402 and 0603</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="TMC2100" prefix="IC">
-<description>Trinamic TMC2100 Stepper Motor Driver (5V...46V, 1.2A RMS, 256 microsteps)</description>
+<deviceset name="TMC21X0" prefix="IC">
+<description>Trinamic TMC21x0 Stepper Motor Driver (5V...46V, 1.2A RMS, 256 microsteps)</description>
 <gates>
-<gate name="IC" symbol="TMC2100" x="0" y="0"/>
+<gate name="IC" symbol="TMC21X0" x="0" y="0"/>
 </gates>
 <devices>
 <device name="-LA" package="QFN36-PAD">
@@ -15270,7 +15270,7 @@ all kinds in 0402 and 0603</description>
 <part name="C5" library="we-rcl" deviceset="CAPACITOR" device="-0402" value="22n/50V"/>
 <part name="R5" library="we-rcl" deviceset="RESISTOR" device="-0402" value="20k"/>
 <part name="R1" library="we-rcl" deviceset="RESISTOR" device="-0402" value="2R2"/>
-<part name="IC1" library="we-chip" deviceset="TMC2100" device="-LA"/>
+<part name="IC1" library="we-chip" deviceset="TMC21X0" device="-LA" value="TMC2130-LA"/>
 <part name="GND17" library="supply1" deviceset="GND" device=""/>
 <part name="SPI" library="we-rcl" deviceset="JUMPER2" device="-0402-NC"/>
 </parts>
