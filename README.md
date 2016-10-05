@@ -2,20 +2,20 @@
 The Silent-Step-Stick is a Stepper Motor Driver Board based on a [Trinamic TMC 2100](http://www.trinamic.com/products/integrated-circuits/stepper-power-driver/tmc2100) or [Trinamic TMC 2130](http://www.trinamic.com/products/integrated-circuits/stepper-power-driver/tmc2130).
 The driver boards are hardware compatible with [StepStick](http://reprap.org/wiki/StepStick) and [Pololu A4988](https://www.pololu.com/product/1182).
 
-[![SilentStepStick TMC2100 (3.3-5V)](https://github.com/watterott/SilentStepStick/raw/master/hardware/SilentStepStick_v12.jpg)](http://www.watterott.com/en/SilentStepStick)
+[![SilentStepStick TMC2100 (3-5V)](https://github.com/watterott/SilentStepStick/raw/master/hardware/SilentStepStick_v12.jpg)](http://www.watterott.com/en/SilentStepStick)
 [![SilentStepStick TMC2100 (5V)](https://github.com/watterott/SilentStepStick/raw/master/hardware/SilentStepStick_v12_5V.jpg)](http://www.watterott.com/en/SilentStepStick-TMC2100-5V)
-[![SilentStepStick TMC2130 (3.3-5V)](https://github.com/watterott/SilentStepStick/raw/master/hardware/SilentStepStick-TMC2130_v10.jpg)](http://www.watterott.com/en/SilentStepStick-TMC2130)
+[![SilentStepStick TMC2130 (3-5V)](https://github.com/watterott/SilentStepStick/raw/master/hardware/SilentStepStick-TMC2130_v10.jpg)](http://www.watterott.com/en/SilentStepStick-TMC2130)
 [![SilentStepStick Protector](https://github.com/watterott/SilentStepStick/raw/master/hardware/StepStick-Protector_v10.jpg)](http://www.watterott.com/en/SilentStepStick-Protector)
 
 
 ## Shop
 * Trinamic **TMC2100** based drivers (CFG pins for configuration)
-  * [TMC2100 SilentStepStick (3.3V-5V logic voltage)](http://www.watterott.com/en/SilentStepStick)
-  * [TMC2100 SilentStepStick (3.3V-5V logic voltage) with soldered Pin Headers](http://www.watterott.com/en/SilentStepStick-with-Pins)
+  * [TMC2100 SilentStepStick (3-5V logic voltage)](http://www.watterott.com/en/SilentStepStick)
+  * [TMC2100 SilentStepStick (3-5V logic voltage) with soldered Pin Headers](http://www.watterott.com/en/SilentStepStick-with-Pins)
   * [TMC2100 SilentStepStick (5V logic voltage)](http://www.watterott.com/en/SilentStepStick-TMC2100-5V)
   * [TMC2100 SilentStepStick (5V logic voltage) with soldered Pin Headers](http://www.watterott.com/en/SilentStepStick-TMC2100-5V-with-Pins)
 * Trinamic **TMC2130** based drivers (SPI for configuration)
-  * [TMC2130 SilentStepStick (3.3V-5V logic voltage)](http://www.watterott.com/en/SilentStepStick-TMC2130)
+  * [TMC2130 SilentStepStick (3-5V logic voltage)](http://www.watterott.com/en/SilentStepStick-TMC2130)
 * Accessories
   * [SilentStepStick Protector (with flyback diodes)](http://www.watterott.com/en/SilentStepStick-Protector)
   * [Suitable Heatsink 10x10mm](http://www.watterott.com/en/Pin-heatsink-square-ICK-S-10-x-10-x-125)
@@ -29,7 +29,7 @@ The driver boards are hardware compatible with [StepStick](http://reprap.org/wik
 * Trinamic TMC21x0 stepper motor driver
 * Step/Dir interface with up to 16 microsteps and 256 microsteps interpolation
 * Motor current: up to **1.2A RMS** continuously and 2.5A short time peak current per coil (active cooling required)
-* Motor voltage: **5.5V...45V** (3.3...5V logic) or **4.75V...45V** (5V logic)
+* Motor voltage: **5.5V...45V** (3V...5V logic) or **4.75V...45V** (5V logic)
 * **microPlyer** - microstep interpolator for increased smoothness of microstepping
 * **stealthChop** - for quiet operation and smooth motion
 * **spreadCycle** - highly dynamic motor control chopper
