@@ -4,7 +4,7 @@
 The SilentStepStick is hardware/pin compatible with StepStick and Pololu A4988 drivers.
 However the TMC2100 has different and more settings, which can be set via the CFG/MS pins.
 The TMC2100 config pins also know three states: low (GND), high (VIO) and open (unconnected).
-On the TMC2130 SPI is used for the configuration and so the controller board must have SPI on the CFG pins.
+[SPI](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus) is used on the TMC2140 for the configuration and so the controller board must have SPI on the CFG pins.
 
 
 ## What is the difference between SilentStepSticks with 3-5V and 5V logic voltage?
@@ -70,7 +70,7 @@ Only after ```VIO``` is present and stable, the driver inputs (STEP, DIR, EN, CF
 Because ```VM``` is a strong power supply with a high voltage, also ensure that there cannot occur voltage spikes on power up. See [Pololu: Understanding Destructive LC Voltage Spikes](https://www.pololu.com/docs/0J16/all).
 
 **Power off:**
-If the motor is running/moving, then it is not allowed to switch off the power supply. Always make sure that the motor stands still on shutting down otherwise the TMC21x0 driver can get damaged.
+If the motor is running/moving, then it is not allowed to switch off the power supply. Always make sure that the motor stands still on shutting down, otherwise the TMC21x0 driver can get damaged.
 An **emergency stop** can be realized, when the ```EN/CFG6``` pin is set to ```VIO```. This will switch off all power drivers and will put the motor into freewheeling.
 See also: [SilentStepStick Protector with flyback diodes](https://github.com/watterott/SilentStepStick#shop)
 
