@@ -11,6 +11,7 @@ The TMC2100 config pins also know three states: low (GND), high (VIO) and open (
 The SilentStepSticks with a variable logic voltage (VIO) of 3-5V use the internal linear regulator of the TMC21x0 to generate from the motor voltage (VM) a 5V voltage for the internal digital and analog circuit (about 20mA).
 Because it is a linear voltage regulator the power dissipation depends on the motor voltage (high motor voltage = high power dissipation/heat).
 The 5V logic SilentStepSticks do not use the internal voltage regulator of TMC2100 and therefor only a 5V supply voltage for VIO is possible and VM has not to be present before VIO.
+Further infos about power-up and down can be found [here](https://github.com/watterott/SilentStepStick/blob/master/docu/FAQ.md#what-to-consider-when-turning-the-power-supply-on-or-off).
 
 Power dissipation of the internal voltage regulator:
 * 0.1W @ VM=12V
