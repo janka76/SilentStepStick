@@ -1,5 +1,8 @@
 /*
   Trinamic TMC2130 Example
+  
+  Another example can be found here:
+  https://github.com/makertum/Trinamic_TMC2130
 */
 
 #include "SPI.h"
@@ -16,7 +19,8 @@
 #define SCK_PIN  13 //CLK/SCK  (ICSP: 3, Uno: 13, Mega: 52)
 
 //TMC2130 registers
-#define WRITE          0x80 //write flag
+#define WRITE_FLAG     (1<<7) //write flag
+#define READ_FLAG      (0<<7) //read flag
 #define REG_GCONF      0x00
 #define REG_GSTAT      0x01
 #define REG_IHOLD_IRUN 0x10
@@ -89,15 +93,23 @@ void setup()
   Serial.println("\nStart...");
 
   //init SPI
-  SPI.setDataMode(SPI_MODE3);
-  SPI.setBitOrder(MSBFIRST);
-  SPI.setClockDivider(SPI_CLOCK_DIV128);
+  SPI.setDataMode(SPI_MODE3); //SPI Mode 3
+  SPI.setBitOrder(MSBFIRST); //MSB first
+  SPI.setClockDivider(SPI_CLOCK_DIV128); //clk=Fcpu/128
   SPI.begin();
 
   //set TMC2130 config
-  tmc_write(WRITE|REG_GCONF,      0x00000001UL); //voltage on AIN is current reference
-  tmc_write(WRITE|REG_IHOLD_IRUN, 0x00001010UL); //IHOLD=0x10, IRUN=0x10
-  tmc_write(WRITE|REG_CHOPCONF,   0x00008008UL); //native 256 microsteps, MRES=0, TBL=1=24, TOFF=8
+  tmc_write(WRITE_FLAG|REG_GCONF,      0x00000001UL); //voltage on AIN is current reference
+  tmc_write(WRITE_FLAG|REG_IHOLD_IRUN, 0x00001010UL); //IHOLD=0x10, IRUN=0x10
+  tmc_write(WRITE_FLAG|REG_CHOPCONF,   0x00008008UL); //native 256 microsteps, MRES=0, TBL=1=24, TOFF=8
+  //tmc_write(WRITE_FLAG|REG_CHOPCONF,   0x01008008UL); //128 microsteps, MRES=0, TBL=1=24, TOFF=8
+  //tmc_write(WRITE_FLAG|REG_CHOPCONF,   0x02008008UL); // 64 microsteps, MRES=0, TBL=1=24, TOFF=8
+  //tmc_write(WRITE_FLAG|REG_CHOPCONF,   0x03008008UL); // 32 microsteps, MRES=0, TBL=1=24, TOFF=8
+  //tmc_write(WRITE_FLAG|REG_CHOPCONF,   0x04008008UL); // 16 microsteps, MRES=0, TBL=1=24, TOFF=8
+  //tmc_write(WRITE_FLAG|REG_CHOPCONF,   0x05008008UL); //  8 microsteps, MRES=0, TBL=1=24, TOFF=8
+  //tmc_write(WRITE_FLAG|REG_CHOPCONF,   0x06008008UL); //  4 microsteps, MRES=0, TBL=1=24, TOFF=8
+  //tmc_write(WRITE_FLAG|REG_CHOPCONF,   0x07008008UL); //  2 microsteps, MRES=0, TBL=1=24, TOFF=8
+  //tmc_write(WRITE_FLAG|REG_CHOPCONF,   0x08008008UL); //  1 microsteps, MRES=0, TBL=1=24, TOFF=8
 
   //TMC2130 outputs on (LOW active)
   digitalWrite(EN_PIN, LOW);
