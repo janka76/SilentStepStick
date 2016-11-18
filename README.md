@@ -5,8 +5,10 @@ The driver boards are hardware compatible with [StepStick](http://reprap.org/wik
 SilentStepStick          | TMC2100 (5V) | TMC2100 (3-5V) | TMC2130 (3-5V)
 ------------------------ | ------------ | -------------- | --------------
                          | [![SSS](https://github.com/watterott/SilentStepStick/raw/master/hardware/SilentStepStick_v12_5V.jpg)](http://www.watterott.com/en/SilentStepStick-TMC2100-5V) | [![SSS](https://github.com/watterott/SilentStepStick/raw/master/hardware/SilentStepStick_v12.jpg)](http://www.watterott.com/en/SilentStepStick) | [![SSS](https://github.com/watterott/SilentStepStick/raw/master/hardware/SilentStepStick-TMC2130_v10.jpg)](http://www.watterott.com/en/SilentStepStick-TMC2130)
-Configuration            | CFG Pins     | CFG Pins       | [SPI](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus)
-Native Microsteps*       | 1/16         | 1/16           | 1/256
+Interface                | Step/Dir     |  Step/Dir      | Step/Dir or [SPI](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus)
+Configuration            | CFG Pins     | CFG Pins       | CFG Pins or [SPI](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus)
+Native Microsteps*       | up to 1/16   | up to 1/16    | up to 1/256
+microPlyer Microsteps    | 1/256        | 1/256          | 1/256
 Logic Voltage ```VIO```  | 5V           | 3 - 5V         | 3 - 5V
 Motor Voltage ```VM```   | 4.75 - 45V   | 5.5 - 45V      | 5.5 - 45V
 ```VM``` always needed** | no           | yes            | yes
