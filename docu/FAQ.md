@@ -38,9 +38,9 @@ If you have problems like step losses then use the more powerful **1/16 spreadCy
 * [Ultimaker UMO + TMC2130 (English)](https://ultimaker.com/en/community/20090-step-by-step-installation-of-sss-tmc2130-on-umo)
 
 #### Boards with USB Power Supply
-Only applicable for SilentStepSticks with variable 3-5V logic voltage (```VIO```):
-If you use a control board with USB power supply (like Arduino + RAMPS) then always ensure that ```VM``` is present, when you connect the board via USB.
-Otherwise the TMC21x0 is not powered via the internal voltage regulator and a high current can flow into ```VIO``` or the IOs and this can damage the internal logic.
+Only applicable for SilentStepSticks with variable 3-5V logic voltage (VIO):
+If you use a control board with USB power supply (like Arduino + RAMPS) then always ensure that the motor voltage (VM) is present, when you connect the board via USB.
+Otherwise the TMC21x0 is not powered via the internal voltage regulator and a high current can flow into VIO or the IOs and this can damage the internal logic.
 As safety workaround you can disconnect the 5V signal in the USB cable, so that the board cannot be powered over USB.
 
 #### RAMPS 1.4 and RUMBA Notes
@@ -67,20 +67,21 @@ The maximum motor current is 1.77A RMS and is set via the 0.11Ohm sense resistor
 **Power on:**
 
 *SilentStepSticks with variable 3-5V logic voltage:*
-The motor supply voltage ```VM``` should come up first and then ```VIO```, because the internal logic of the TMC21x0 driver is powered from ```VM```.
+The motor voltage VM should come up first and then the logic voltage VIO, because the internal logic of the TMC21x0 driver is powered from VM.
 
 *SilentStepSticks with 5V logic voltage:*
 There is no special power up sequence needed.
 
-Only after ```VIO``` is present and stable, the driver inputs (STEP, DIR, EN, CFG1...) can be driven with a high level.
+Only after the logic voltage VIO is present and stable, the driver inputs (STEP, DIR, EN, CFG1...) can be driven with a high level.
 
-Because ```VM``` is a strong power supply with a high voltage, also ensure that there cannot occur voltage spikes on power up. See [Pololu: Understanding Destructive LC Voltage Spikes](https://www.pololu.com/docs/0J16/all).
+Because the motor voltage VM is a strong power supply with a high voltage, also ensure that there cannot occur voltage spikes on power up.
+See [Pololu: Understanding Destructive LC Voltage Spikes](https://www.pololu.com/docs/0J16/all).
 
 **Power off:**
 
 If the motor is running/moving, then it is not allowed to switch off the power supply. Always make sure that the motor stands still on shutting down, otherwise the TMC21x0 driver can get damaged.
 
-An **emergency stop** can be realized, when the ```EN/CFG6``` pin is set to ```VIO```. This will switch off all power drivers and will put the motor into freewheeling.
+An **emergency stop** can be realized, when the EN/CFG6 pin is set to VIO (high). This will switch off all power drivers and will put the motor into freewheeling.
 See also: [SilentStepStick Protector with flyback diodes](https://github.com/watterott/SilentStepStick#shop)
 
 
@@ -90,13 +91,13 @@ A motor supply voltage of 12V is in most cases to low and in general the sound g
 
 ## How to control the TMC21x0 stepper motor driver?
 The SilentStepStick has a normal step+direction interface.
-You set the direction with the ```DIR``` pin and on every pulse on the ```STEP``` pin the motor will move one step.
+You set the direction with the DIR pin and on every pulse on the STEP pin the motor will move one step.
 Here you can find an [Arduino example](https://github.com/watterott/SilentStepStick/tree/master/software) and [Arduino library](http://www.airspayce.com/mikem/arduino/AccelStepper/) (interface=DRIVER).
 
 
 ## Is it possible to connect the CFG pins from different SilentStepSticks?
-It is possible to connect the ```CFG``` pins from two or more driver boards.
-However then the pin state can only be ```GND``` (low) or ```VIO``` (high). The open state (unconnected) is not possible in this configuration.
+It is possible to connect the CFG pins from two or more driver boards.
+However then the pin state can only be GND (low) or VIO (high). The open state (unconnected) is not possible in this configuration.
 
 
 ## Why is the TMC2100 chip on the bottom PCB side?
