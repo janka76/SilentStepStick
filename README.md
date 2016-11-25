@@ -2,19 +2,24 @@
 The Silent-Step-Stick is a Stepper Motor Driver Board for 2-Phase Motors based on a [Trinamic TMC 2100](http://www.trinamic.com/products/integrated-circuits/stepper-power-driver/tmc2100) or [Trinamic TMC 2130](http://www.trinamic.com/products/integrated-circuits/stepper-power-driver/tmc2130).
 The driver boards are hardware compatible with [StepStick](http://reprap.org/wiki/StepStick) and [Pololu A4988](https://www.pololu.com/product/1182).
 
-SilentStepStick          | TMC2100 (5V) | TMC2100 (3-5V) | TMC2130 (3-5V)
------------------------- | ------------ | -------------- | --------------
-                         | [![SSS](https://github.com/watterott/SilentStepStick/raw/master/hardware/SilentStepStick_v12_5V.jpg)](http://www.watterott.com/en/SilentStepStick-TMC2100-5V) | [![SSS](https://github.com/watterott/SilentStepStick/raw/master/hardware/SilentStepStick_v12.jpg)](http://www.watterott.com/en/SilentStepStick) | [![SSS](https://github.com/watterott/SilentStepStick/raw/master/hardware/SilentStepStick-TMC2130_v10.jpg)](http://www.watterott.com/en/SilentStepStick-TMC2130)
-Interface                | Step/Dir     |  Step/Dir      | Step/Dir or [SPI](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus)
-Configuration            | CFG Pins     | CFG Pins       | CFG Pins or [SPI](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus)
-Native Microsteps*       | up to 1/16   | up to 1/16    | up to 1/256
-microPlyer Microsteps    | 1/256        | 1/256          | 1/256
-Logic Voltage ```VIO```  | 5V           | 3 - 5V         | 3 - 5V
-Motor Voltage ```VM```   | 4.75 - 45V   | 5.5 - 45V      | 5.5 - 45V
-```VM``` always needed** | no           | yes            | yes
-Internal V-Regulator**   | disabled     | enabled        | enabled
-stealthChop (quiet)      | yes          | yes            | yes
-spreadCycle              | yes          | yes            | yes
+SilentStepStick          | TMC2100 (5V) | TMC2100 (3-5V) | TMC2130 (3-5V) | TMC2208 (3-5V)
+------------------------ | ------------ | -------------- | -------------- | --------------
+                         | [![SSS](https://github.com/watterott/SilentStepStick/raw/master/hardware/SilentStepStick_v12_5V.jpg)](http://www.watterott.com/en/SilentStepStick-TMC2100-5V) | [![SSS](https://github.com/watterott/SilentStepStick/raw/master/hardware/SilentStepStick_v12.jpg)](http://www.watterott.com/en/SilentStepStick) | [![SSS](https://github.com/watterott/SilentStepStick/raw/master/hardware/SilentStepStick-TMC2130_v10.jpg)](http://www.watterott.com/en/SilentStepStick-TMC2130) | coming soon
+Interface                | Step/Dir     | Step/Dir       | Step/Dir or [SPI](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus) | Step/Dir
+Configuration            | CFG Pins     | CFG Pins       | CFG Pins or [SPI](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus) | CFG Pins or [UART](https://en.wikipedia.org/wiki/UART)
+Native Microsteps*       | up to 1/16   | up to 1/16     | up to 1/256    | up to 1/256
+microPlyer Microsteps    | 1/256        | 1/256          | 1/256          | 1/256
+Logic Voltage ```VIO```  | 5V           | 3 - 5V         | 3 - 5V         | 3 - 5V
+Motor Voltage ```VM```   | 4.75 - 46V   | 5.5 - 46V      | 5.5 - 46V      | 5.5 - 36V
+Motor Phase Current      | 1.2A RMS     | 1.2A RMS       | 1.2A RMS       | 1.2A RMS
+```VM``` always needed** | no           | yes            | yes            | yes
+Internal V-Regulator**   | disabled     | enabled        | enabled        | enabled
+RDSon                    | >=0.5 Ohm    | >=0.5 Ohm      | >=0.5 Ohm      | <=0.3 Ohm
+stealthChop (quiet)      | yes          | yes            | yes            | yes
+spreadCycle              | yes          | yes            | yes            | yes
+coolStep                 | no           | no             | yes            | no
+stallGuard               | no           | no             | yes            | no
+dcStep                   | no           | no             | yes            | no
 
 _* without interpolation (microPlyer), ** further infos [here](https://github.com/watterott/SilentStepStick/blob/master/docu/FAQ.md#what-is-the-difference-between-silentstepsticks-with-3-5v-and-5v-logic-voltage)_
 
@@ -37,10 +42,9 @@ _* without interpolation (microPlyer), ** further infos [here](https://github.co
 ## Features
 * Hardware compatible with [StepStick](http://reprap.org/wiki/StepStick) and [Pololu A4988](https://www.pololu.com/product/1182)
 * Components on bottom PCB side for better heat emission, further infos [here](https://github.com/watterott/SilentStepStick/blob/master/docu/FAQ.md#why-is-the-tmc2100-chip-on-the-bottom-pcb-side)
-* Trinamic TMC21x0 stepper motor driver
-* Step/Dir interface with up to 16 microsteps and 256 microsteps interpolation
-* Motor current: up to **1.2A RMS** continuously and 2.5A short time peak current per coil (active cooling required)
-* Motor voltage: **5.5V...45V** (3V...5V logic) or **4.75V...45V** (5V logic)
+* Trinamic stepper motor driver
+* Step/Dir interface with up to 256 microsteps and interpolation
+* Motor current: up to **1.2A RMS** continuously (active cooling required)
 * **microPlyer** - microstep interpolator for increased smoothness of microstepping
 * **stealthChop** - for quiet operation and smooth motion
 * **spreadCycle** - highly dynamic motor control chopper

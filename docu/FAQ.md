@@ -40,7 +40,7 @@ If you have problems like step losses then use the more powerful **1/16 spreadCy
 #### Boards with USB Power Supply
 Only applicable for SilentStepSticks with variable 3-5V logic voltage (```VIO```):
 If you use a control board with USB power supply (like Arduino + RAMPS) then always ensure that ```VM``` is present, when you connect the board via USB.
-Otherwise the TMC21x0 is not powered via the internal voltage regulator and a high current can flow into ```VIO``` and this can damage the internal logic.
+Otherwise the TMC21x0 is not powered via the internal voltage regulator and a high current can flow into ```VIO``` or the IOs and this can damage the internal logic.
 As safety workaround you can disconnect the 5V signal in the USB cable, so that the board cannot be powered over USB.
 
 #### RAMPS 1.4 and RUMBA Notes
@@ -65,13 +65,21 @@ The maximum motor current is 1.77A RMS and is set via the 0.11Ohm sense resistor
 
 ## What to consider when turning the power supply on or off?
 **Power on:**
-The motor supply voltage ```VM``` should come up first and then ```VIO```, because the internal logic of the TMC21x0 driver is powered from ```VM``` (SilentStepSticks with 3-5V logic voltage).
+
+*SilentStepSticks with variable 3-5V logic voltage:*
+The motor supply voltage ```VM``` should come up first and then ```VIO```, because the internal logic of the TMC21x0 driver is powered from ```VM```.
+
+*SilentStepSticks with 5V logic voltage:*
+There is no special power up sequence needed.
+
 Only after ```VIO``` is present and stable, the driver inputs (STEP, DIR, EN, CFG1...) can be driven with a high level.
 
 Because ```VM``` is a strong power supply with a high voltage, also ensure that there cannot occur voltage spikes on power up. See [Pololu: Understanding Destructive LC Voltage Spikes](https://www.pololu.com/docs/0J16/all).
 
 **Power off:**
+
 If the motor is running/moving, then it is not allowed to switch off the power supply. Always make sure that the motor stands still on shutting down, otherwise the TMC21x0 driver can get damaged.
+
 An **emergency stop** can be realized, when the ```EN/CFG6``` pin is set to ```VIO```. This will switch off all power drivers and will put the motor into freewheeling.
 See also: [SilentStepStick Protector with flyback diodes](https://github.com/watterott/SilentStepStick#shop)
 
