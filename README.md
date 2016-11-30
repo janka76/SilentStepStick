@@ -82,34 +82,8 @@ _* without interpolation (microPlyer), ** further infos [here](https://github.co
 
   [<img src="https://hackadaycom.files.wordpress.com/2016/09/tmc_thumb1.jpg" width="400" height="400">](http://hackaday.com/2016/09/30/3d-printering-trinamic-tmc2130-stepper-motor-drivers-shifting-the-gears/)
 
-* What is Trinamic stallGuard2 and coolStep:
+* What is Trinamic stallGuard and coolStep:
 
   [![Trinamic stallGuard2 and coolStep](http://img.youtube.com/vi/Prw7wNa20Gk/0.jpg)](https://www.youtube.com/watch?v=Prw7wNa20Gk)
 
-* Tests:
-  * [Watterott (Stepper Motor)](https://www.youtube.com/watch?v=0l-HlntFYOY)
-  * [Aleks (RepRap Prusa i3)](https://www.youtube.com/watch?v=33jQ0P7SMJA)
-  * [Anthony (Delta Printer)](https://www.youtube.com/watch?v=CZOV0BdgSiU)
-  * [Mario Lukas](https://www.youtube.com/watch?v=mJmg0iRHX8s)
-  * Yusuke Sasaki: [TMC2100 steahlChop](https://www.youtube.com/watch?v=wrS7l46YJ_E), [TMC2100 spreadCycle](https://www.youtube.com/watch?v=391TY72wzPQ), [A4988](https://www.youtube.com/watch?v=iw6MRjzS6V4)
-  * [MakerSpatz (Ultimaker)](https://www.youtube.com/watch?v=0jPbzB7XtWg)
-  * [Aitor Esteve Alvarado (Ninja Prusa i3)](https://www.youtube.com/watch?v=c_TCVirnKJ0)
-  * [Artur Wronowski (Delta Printer)](https://www.youtube.com/watch?v=hH2UkAmbfYs)
-  * [3D Huynh (Felix 3D)](https://www.youtube.com/watch?v=EglFOpTXPtg)
-  * [Easy 3D (Sparkcube)](https://www.youtube.com/watch?v=BxE_F8_Ec8M)
-  * [WOLF HSW (linear drive)](https://www.youtube.com/watch?v=wjuAu0WYOPM)
-  * Clarence Lee (ATOM Delta Printer): [TMC2100](https://www.youtube.com/watch?v=sBVNqFybUZI), [DRV8825](https://www.youtube.com/watch?v=tNufJnybsxg), [A4982](https://www.youtube.com/watch?v=r1noUt2UoO8)
-  * Alex Tien (3DP Delta Printer): [TMC2100](https://www.youtube.com/watch?v=RcqnXXp4tPA), [A4988](https://www.youtube.com/watch?v=F2oB_NOLxHU)
-  * swdjojo (Prusa i3): [TMC2100](https://www.youtube.com/watch?v=vBRNifmHaZE), [A4988](https://www.youtube.com/watch?v=TCgErVx93OA)
-  * [Doc. Snuggles (Stepper Motor)](https://www.youtube.com/watch?v=gj6f6HSrHc4)
-  * [Robert Sertic (Ultimaker)](https://www.youtube.com/watch?v=1wQJZb0gzoE)
-  * [Emanuel Kant (Ultimaker)](https://www.youtube.com/watch?v=Y7CG43yf9zA)
-  * [ghicione (EggBot)](https://www.youtube.com/watch?v=4FBAAQXnESU)
-  * Edward Kuo: [E3D Cyclops Delta Printer](https://www.youtube.com/watch?v=iEYdrMH69oo), [TMC2100 water cooled](https://www.youtube.com/watch?v=vjNM9R0NZG0)
-  * [Noah Ahmad Connor (Prusa i3)](https://www.youtube.com/watch?v=mNdl3s8TYmY)
-  * [Sterillium (XYZ DaVinci)](https://www.youtube.com/watch?v=k-szP5wuplM)
-  * [markg21405 (Delta Printer)](https://www.youtube.com/watch?v=tytL3KeIlLw)
-  * [JJiG (MakerFarm Pegasus)](https://www.youtube.com/watch?v=9Rny6n1MCfI)
-  * [René Jurack (Skimmy v3)](https://www.youtube.com/watch?v=qpl8v0k1_34)
-  * [David Spaulding (A4988 vs. TMC2100)](https://www.youtube.com/watch?v=Z5OQpMSvWvs)
-  * [Tarjeik (DRV8825 vs. TMC2100)](https://www.youtube.com/watch?v=oNAHOOolHWw)
+* More Tests and Reviews on [YouTube](https://www.youtube.com/results?search_query=SilentStepStick)
