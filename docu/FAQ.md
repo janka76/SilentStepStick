@@ -80,6 +80,12 @@ See [Pololu: Understanding Destructive LC Voltage Spikes](https://www.pololu.com
 
 **Power off:**
 
+*SilentStepSticks with variable 3-5V logic voltage:*
+The logic voltage VIO should turned off at first and then the motor voltage VM, because the internal logic of the TMC21x0 driver is powered from VM.
+
+*SilentStepSticks with 5V logic voltage:*
+There is no special power off sequence needed.
+
 If the motor is running/moving, then it is not allowed to switch off the power supply. Always make sure that the motor stands still on shutting down, otherwise the TMC21x0 driver can get damaged.
 
 An **emergency stop** can be realized, when the EN/CFG6 pin is set to VIO (high). This will switch off all power drivers and will put the motor into freewheeling.
