@@ -21,7 +21,7 @@ Power dissipation of the internal voltage regulator:
 
 
 ## Where can I find more information on the settings and operation modes?
-More information can be found in the [SilentStepStick schematics](https://github.com/watterott/SilentStepStick/tree/master/hardware) and [TMC2100 datasheet](http://www.trinamic.com/products/integrated-circuits/stepper-power-driver/tmc2100) / [TMC2130 datasheet](http://www.trinamic.com/products/integrated-circuits/stepper-power-driver/tmc2130).
+More information can be found in the [SilentStepStick schematics](https://github.com/watterott/SilentStepStick/tree/master/hardware) and [TMC2100 datasheet](http://www.trinamic.com/products/integrated-circuits/details/tmc2100/) / [TMC2130 datasheet](http://www.trinamic.com/products/integrated-circuits/details/tmc2130/).
 
 For most cases the **1/16 stealthChop** mode (CFG1=open, CFG2=open, CFG3=open) is suitable.
 If you have problems like step losses then you can use a higher current setting in stealthChop with automatic power-down (open/unconnected EN pin)
