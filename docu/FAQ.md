@@ -75,6 +75,8 @@ There is no special power up sequence needed.
 
 Only after the logic voltage VIO is present and stable, the driver inputs (STEP, DIR, EN, CFG1...) can be driven with a high level.
 
+A step pulse (moving) should only be done after the motor voltage VM is present and stable.
+
 Because the motor voltage VM is a strong power supply with a high voltage, also ensure that there cannot occur voltage spikes on power up.
 See [Pololu: Understanding Destructive LC Voltage Spikes](https://www.pololu.com/docs/0J16/all).
 
