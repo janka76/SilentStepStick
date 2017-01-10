@@ -4,13 +4,13 @@
 The SilentStepStick is hardware/pin compatible with StepStick and Pololu A4988 drivers.
 However the TMC2100 has different and more settings, which can be set via the CFG/MS pins.
 The TMC2100 config pins also know three states: low (GND), high (VIO) and open (unconnected).
-[SPI](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus) is used on the TMC2140 for the configuration and so the controller board must have SPI on the CFG pins.
+[SPI](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus) is used on the TMC2130 for the configuration and so the controller board must have SPI on the CFG pins.
 
 
 ## What is the difference between SilentStepSticks with 3-5V and 5V logic voltage?
 The SilentStepSticks with a variable logic voltage (VIO) of 3-5V use the internal linear regulator of the TMC21x0 to generate from the motor voltage (VM) a 5V voltage for the internal digital and analog circuit (about 20mA).
 Because it is a linear voltage regulator the power dissipation depends on the motor voltage (high motor voltage = high power dissipation/heat).
-The 5V logic SilentStepSticks do not use the internal voltage regulator of TMC2100 and therefor only a 5V supply voltage for VIO is possible and VM has not to be present before VIO.
+The 5V logic SilentStepSticks do not use the internal voltage regulator of TMC21x0 and therefor only a 5V supply voltage for VIO is possible and VM has not to be present before VIO.
 Further infos about power-up and down can be found [here](https://github.com/watterott/SilentStepStick/blob/master/docu/FAQ.md#what-to-consider-when-turning-the-power-supply-on-or-off).
 
 Power dissipation of the internal voltage regulator:
@@ -56,12 +56,20 @@ The maximum motor current is 1.77A RMS and is set via the 0.11Ohm sense resistor
 
 ```Irms = (Vref * 1.77A) / 2.5V = Vref * 0.71```
 
-```Vref = (Irms * 2.5V) / 1.77A = Irms * 1.41```
+```Vref = (Irms * 2.5V) / 1.77A = Irms * 1.41 = Imax```
 
-**Example:** A voltage of 1.0V on Vref sets the motor current to 0.71A RMS.
+```Vref``` -> Voltage on Vref pin (TMC21x0 pin 23 AIN_IREF)
 
-**Note:** On some stepper motor drivers the maximum current (e.g. A4988) is set via Vref and on others the RMS current (e.g. TMC2100).
-          ```Imax = 1.41 * Irms```
+```Irms``` -> RMS (Root Mean Square) current per phase (Irms = Imax / 1.41)
+
+```Imax``` -> Maximum current per phase (Imax = Irms * 1.41)
+
+**Example:**
+A voltage of 1.0V on Vref sets the motor current to 0.71A RMS.
+
+**Note:**
+On some stepper motor drivers the maximum current (e.g. A4988) is set via Vref and on others the RMS current (e.g. TMC2100).
+The TMC21x0 has an automatic thermal shutdown if the driver gets to hot.
 
 
 ## What to consider when turning the power supply on or off?
@@ -110,7 +118,7 @@ However then the pin state can only be GND (low) or VIO (high). The open state (
 
 
 ## Why is the TMC2100 chip on the bottom PCB side?
-The TMC2100/TMC2130 chip has a thermal pad on the bottom which is soldered to the PCB.
+The TMC2100 or TMC2130 chip has a thermal pad on the bottom which is soldered to the PCB.
 So the thermal resistance via the chip bottom is better than via the top.
 That is why the chip is on the bottom PCB side.
 A heat sink can be placed directly on the PCB.
