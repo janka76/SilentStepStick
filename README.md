@@ -56,9 +56,10 @@ _* without interpolation (microPlyer), ** further infos [here](https://github.co
   * **dcStep** - load dependent speed control
 
 
-## Hardware
-* [Schematics/Layout + Guide](https://github.com/watterott/SilentStepStick/tree/master/hardware)
+## Hardware and Software
 * [FAQ (Frequently Asked Questions)](https://github.com/watterott/SilentStepStick/blob/master/docu/FAQ.md)
+* [Schematics + Layout](https://github.com/watterott/SilentStepStick/tree/master/hardware) (PDF files include additional infos)
+* [Arduino Examples](https://github.com/watterott/SilentStepStick/tree/master/software)
 * [Eagle CAD Part](https://github.com/watterott/Eagle-Libs)
 
 
