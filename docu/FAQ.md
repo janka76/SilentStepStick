@@ -47,6 +47,7 @@ As safety workaround you can disconnect the 5V signal in the USB cable, so that 
 #### RAMPS 1.4 and RUMBA Notes
 If you remove all jumpers (or open all switches) for MS1+MS2+MS3, then the SilentStepStick TMC2100 driver will be in 1/16 spreadCycle mode (CFG1=GND, CFG2=open, CFG3=open), because there is a pull-down resistor on MS1 on the RAMPS.
 But if you have not an original [RAMPS 1.4](http://reprap.org/wiki/RAMPS_1.4) or [RUMBA](http://reprap.org/wiki/RUMBA), then your schematics can be different and you have to check the MS-Pin configurations on you board.
+We recommend the TMC2100 SilentStepStick with 5V for RAMPS and RUMBA boards, because they use 5V logic.
 
 
 ## How to set the stepper motor current?
