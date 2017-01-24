@@ -65,26 +65,30 @@ _* without interpolation (microPlyer), ** further infos [here](https://github.co
 
 ## Reviews and Tests
 
-* Review from Thomas Sanladerer:
+* Review from Thomas Sanladerer
 
   [![SilentStepStick/TMC2100 Review](http://img.youtube.com/vi/g6Bxoqr8QlY/0.jpg)](https://www.youtube.com/watch?v=g6Bxoqr8QlY)
 
   [![SilentStepStick/TMC2100 Review Update](http://img.youtube.com/vi/mYuZqx8xwTg/0.jpg)](https://www.youtube.com/watch?v=mYuZqx8xwTg)
 
-* Review from Peter Recktenwald:
+* Review from Peter Recktenwald
 
   [![SilentStepStick/TMC2100 Review](http://img.youtube.com/vi/P3ebhi-vZRY/0.jpg)](https://www.youtube.com/watch?v=P3ebhi-vZRY)
 
-* Review from Georg Mill:
+* Review from Georg Mill
 
   [<img src="http://blog.georgmill.de/wp-content/uploads/2015/06/steppermotor_intro.jpg" width="400" height="225">](http://blog.georgmill.de/2015/06/18/schrittmotor-test-5-treiber-im-vergleich/)
 
-* Review from Moritz Walter:
+* Review from Moritz Walter
 
   [<img src="https://hackadaycom.files.wordpress.com/2016/09/tmc_thumb1.jpg" width="400" height="400">](http://hackaday.com/2016/09/30/3d-printering-trinamic-tmc2130-stepper-motor-drivers-shifting-the-gears/)
 
-* What is Trinamic stallGuard and coolStep:
+* What is Trinamic spreadCycle and stealthChop?
 
-  [![Trinamic stallGuard2 and coolStep](http://img.youtube.com/vi/Prw7wNa20Gk/0.jpg)](https://www.youtube.com/watch?v=Prw7wNa20Gk)
+  [![Trinamic spreadCycle and stealthChop](http://img.youtube.com/vi/Q0sJlGh9WNY/0.jpg)](https://www.youtube.com/watch?v=Q0sJlGh9WNY)
+
+* What is Trinamic stallGuard and coolStep?
+
+  [![Trinamic stallGuard and coolStep](http://img.youtube.com/vi/Prw7wNa20Gk/0.jpg)](https://www.youtube.com/watch?v=Prw7wNa20Gk)
 
 * More Tests and Reviews on [YouTube](https://www.youtube.com/results?search_query=SilentStepStick)
