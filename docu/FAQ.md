@@ -2,7 +2,7 @@
 
 ## Is the SilentStepStick 100% compatible with a StepStick or Pololu A4988?
 The SilentStepStick is hardware/pin compatible with StepStick and Pololu A4988 drivers.
-However the TMC2100 has different and more settings, which can be set via the CFG/MS pins.
+However the TMC2100 has different and more settings, which can be set via the CFG/MS pins and the **DIR pin is inverted** (direction).
 The TMC2100 config pins also know three states: low (GND), high (VIO) and open (unconnected).
 [SPI](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus) is used on the TMC2130 for the configuration and so the controller board must have SPI on the CFG pins.
 
