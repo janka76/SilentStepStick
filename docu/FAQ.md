@@ -2,9 +2,13 @@
 
 ## Is the SilentStepStick 100% compatible with a StepStick or Pololu A4988?
 The SilentStepStick is hardware/pin compatible with StepStick and Pololu A4988 drivers.
-However the TMC2100 has different and more settings, which can be set via the CFG/MS pins and the **DIR pin is inverted** (direction).
+However the TMC21x0 has different and more settings, which can be set via the CFG/MS pins and the **DIR pin is inverted** (direction).
 The TMC2100 config pins also know three states: low (GND), high (VIO) and open (unconnected).
-[SPI](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus) is used on the TMC2130 for the configuration and so the controller board must have SPI on the CFG pins.
+The TMC2130 can be configured via CFG pins or [SPI](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus) and the TMC2208 via CFG pins or [UART](https://en.wikipedia.org/wiki/Universal_asynchronous_receiver/transmitter).
+
+
+## Can I use a stepper motor with a lower voltage than the driver motor supply voltage?
+Yes, because the TMC2xxx drivers use a chopper drive circuit to generate a constant current in each winding (motor phase) rather than applying a constant voltage.
 
 
 ## What is the difference between SilentStepSticks with 3-5V and 5V logic voltage?
@@ -21,7 +25,10 @@ Power dissipation of the internal voltage regulator:
 
 
 ## Where can I find more information on the settings and operation modes?
-More information can be found in the [SilentStepStick schematics](https://github.com/watterott/SilentStepStick/tree/master/hardware) and [TMC2100 datasheet](http://www.trinamic.com/products/integrated-circuits/details/tmc2100/) / [TMC2130 datasheet](http://www.trinamic.com/products/integrated-circuits/details/tmc2130/).
+More information can be found here in the [SilentStepStick schematics](https://github.com/watterott/SilentStepStick/tree/master/hardware) and
+[TMC2100 datasheet](http://www.trinamic.com/products/integrated-circuits/details/tmc2100/),
+[TMC2130 datasheet](http://www.trinamic.com/products/integrated-circuits/details/tmc2130/) or
+[TMC2208 datasheet](http://www.trinamic.com/products/integrated-circuits/details/tmc2208-la/).
 
 For most cases the **1/16 stealthChop** mode (CFG1=open, CFG2=open, CFG3=open) is suitable.
 If you have problems like step losses then you can use a higher current setting in stealthChop with automatic power-down (open/unconnected EN pin)
@@ -119,7 +126,7 @@ However then the pin state can only be GND (low) or VIO (high). The open state (
 
 
 ## Why is the TMC2100 chip on the bottom PCB side?
-The TMC2100 or TMC2130 chip has a thermal pad on the bottom which is soldered to the PCB.
+The TMC2xxx chip has a thermal pad on the bottom which is soldered to the PCB.
 So the thermal resistance via the chip bottom is better than via the top.
 That is why the chip is on the bottom PCB side.
 A heat sink can be placed directly on the PCB.
